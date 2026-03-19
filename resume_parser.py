@@ -60,5 +60,8 @@ for name, value in dct_resumes.items():
 print("Matched Candidates:")
 for candidate in matched_candidates:
     print("Name:", candidate[0])
-    print("Skills:", candidate[1] if candidate[1] else "No matching skills")
+    if candidate[1]:
+        print("Matched Skills:", candidate[1])
+    else:
+        print("Skills:", "No matching skills")
     print() 
