@@ -37,11 +37,11 @@ class BankAccount:
 
     def get_balance(self):
         return self.__balance
-    def Deposit(self, amount):
+    def deposit(self, amount):
         self.__balance += amount
         print(amount,"deposited successfully!")
 
-    def Withdraw(self, amount):
+    def withdraw(self, amount):
         self.__balance -= amount
         print(amount,"withdrawn successfully!")
 
@@ -50,6 +50,6 @@ class BankAccount:
 
 user1 = BankAccount(100000)
 user1.show_balance()
-user1.Deposit(1000)
-user1.Withdraw(100)
+user1.deposit(1000)
+user1.withdraw(100)
 user1.show_balance()
