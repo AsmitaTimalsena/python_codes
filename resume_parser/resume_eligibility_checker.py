@@ -5,18 +5,22 @@ Feature: Resume Eligibility Checker
 Description: A simple program that checks the eligibility of a candidate for different developer roles based on their
 
 '''
-def eligibilty_checker():
-    name = input("Please enter your name: ")
-    experience = int(input("Please enter your years of experience: "))
-    
+
+def eligibility_checker(experience):
     if experience >= 5:
-        print(name, " is eligible for the role of Senior Developer.")
-    elif experience >= 2 and experience < 5:
-        print(name, " is eligible for the role of Mid-Level Developer.")
-    elif experience >= 0 and experience < 2:
-        print(name, " is eligible for the role of Junior Developer.")
+        return "Senior Developer"
+    elif experience >= 2:
+        return "Mid-Level Developer"
+    elif experience >= 0:
+        return "Junior Developer"
     else:
-        print(name, " is not eligible for any of the specified roles.")
+        return "Not Eligible"
 
 
-eligibility_checker()
+# Optional manual run (for local testing)
+if __name__ == "__main__":
+    name = input("Enter your name: ")
+    experience = int(input("Enter years of experience: "))
+
+    role = eligibility_checker(experience)
+    print(f"{name} is eligible for: {role}")
