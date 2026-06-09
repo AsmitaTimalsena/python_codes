@@ -5,18 +5,19 @@ Feature: Resume Score Calculator
 Description: A simple program that calculates the score of a candidate based on their skills
 
 '''
+def score_calculator(python, aws):
+    score = 0
 
-def scoreCalculator():
-   score = 0
-   
-   python = input("Do you know Python? (yes/no): ")
-   aws = input("Do you know AWS? (yes/no): ")
-   
-   if python == "yes":
-      score = score + 10
-   
-   if aws == "yes":
-      score = score + 10
-   
-   print("Resume Score:", score)
-scoreCalculator()
+    if python == "yes":
+        score += 10
+
+    if aws == "yes":
+        score += 10
+
+    return score
+
+if __name__ == "__main__":
+    python = input("Do you know Python? (yes/no): ")
+    aws = input("Do you know AWS? (yes/no): ")
+
+    print("Resume Score:", score_calculator(python, aws))
